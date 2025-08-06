@@ -1,0 +1,119 @@
+.shape {
+  border: 1px solid black;
+  transition: top 0.5s ease;
+}
+
+.rectangle {
+  height: 50px;
+  width: 100px;
+  background-color: #555;
+}
+
+.oval {
+  height: 50px;
+  width: 100px;
+  background-color: #555;
+  border-radius: 50%;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+  border-radius: 50%;
+}
+
+.square {
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+}
+
+body {
+  display: flex;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+
+}
+
+#game-contariner {
+  position: relative;
+
+  background-color: rgb(252, 255, 216);
+  ;
+  height: 98vh;
+  width: 80%;
+  border: 2px black solid;
+  border-radius: 8px;
+}
+
+.info {
+  background-color: rgb(252, 255, 216);
+  height: 98vh;
+  width: 20%;
+  border: 2px black solid;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 6px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 180px;
+  height: 50px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+#start-btn {
+  height: 100px;
+  background-color: green;
+  color: aliceblue;
+  font-size: large;
+}
+
+#start-btn:hover {
+  border: 2px solid black;
+  height: 110px;
+  width: 190px;
+}
+
+#stop-btn {
+  background-color: red;
+  color: aliceblue;
+  font-size: large;
+}
+
+#stop-btn:hover {
+  border: 2px solid black;
+  height: 55px;
+  width: 190px;
+}
+
+.score-mis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2,
+p {
+  font-size: xx-large;
+  font-weight: 400;
+}
+
+p {
+  border-bottom: solid;
+}
