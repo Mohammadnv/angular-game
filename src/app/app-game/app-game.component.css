@@ -1,6 +1,5 @@
-.shape {
-  border: 1px solid black;
-  transition: top 0.5s ease;
+.shape{
+  position: absolute;
 }
 
 .rectangle {
@@ -29,8 +28,20 @@
   background-color: #555;
 }
 
+.triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid #555;
+}
+
 body {
   display: flex;
+}
+
+html{
+    background-color: darkgoldenrod;
 }
 
 .main {
@@ -39,14 +50,14 @@ body {
 
 }
 
-#game-contariner {
+#game-container {
   position: relative;
-
-  background-color: rgb(252, 255, 216);
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
   ;
   height: 98vh;
   width: 80%;
-  border: 2px black solid;
+  border: 8px black solid;
   border-radius: 8px;
 }
 
@@ -54,7 +65,7 @@ body {
   background-color: rgb(252, 255, 216);
   height: 98vh;
   width: 20%;
-  border: 2px black solid;
+  border: 8px black solid;
   border-radius: 8px;
   display: flex;
   justify-content: space-around;
