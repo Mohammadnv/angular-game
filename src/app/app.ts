@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { GameComponent,  } from './game/game.component';
 import { AppGameComponent } from './app-game/app-game.component';
 
 

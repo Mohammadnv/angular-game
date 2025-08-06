@@ -12,14 +12,14 @@ export class AppGameComponent implements OnInit {
     ngOnInit() { }
 
     score: number = 0;
-    mistake: number = 0;
+    health: number = 5;
     GameInterval: any;
     speed: number = 1;
 
 
     StartGame(): void {
         this.score = 0;
-        this.mistake = 0;
+        this.health = 5;
         this.speed = 1;
         this.CleareShape();
         this.GameInterval = setInterval(() => this.CreateShape(), 1000);
@@ -27,7 +27,7 @@ export class AppGameComponent implements OnInit {
 
     EndGame(): void {
         clearInterval(this.GameInterval);
-        if (confirm('your score is' + this.score + 'and your mistake is' + this.mistake + '*****' + 'Do you want to play again?')) {
+        if (confirm('your score is' + this.score +  "/*/*/*/*/*/*/" + 'Do you want to play again?')) {
             this.StartGame()
         }
         this.CleareShape();
@@ -97,7 +97,7 @@ export class AppGameComponent implements OnInit {
 
         Shape.onclick = () => {
             Shape.remove();
-            this.score++;
+            this.score ++;
             (this.speed += 0.5).toFixed(0)
         }
 
@@ -109,7 +109,7 @@ export class AppGameComponent implements OnInit {
             let shapetop = parseInt(getComputedStyle(Shape).top);
 
             if (shapetop > window.innerHeight) {
-                this.mistake++;
+                this.health--;
                 Shape.remove();
                 clearInterval(fall);
 
@@ -117,11 +117,7 @@ export class AppGameComponent implements OnInit {
                     this.speed--;
                 }
 
-                if (this.mistake > 3) {
-                    this.speed - 2;
-                }
-
-                if (this.mistake > 6) {
+                if (this.health == 0) {
                     this.EndGame();
                 }
             } else {
