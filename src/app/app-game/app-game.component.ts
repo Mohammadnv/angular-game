@@ -42,8 +42,8 @@ export class AppGameComponent implements OnInit {
     CreateShape(): void {
         const Shape = document.createElement("div");
         Shape.classList.add("shape");
-        let Shapestype: string[] = ["rectangle", "oval", "circle", "square", "triangle-up"];
-        const RandomType = Shapestype[Math.floor(Math.random() * 5)];
+        let Shapestype: string[] = ["rectangle", "oval", "circle", "square", "triangle-up", "triangle-down"];
+        const RandomType = Shapestype[Math.floor(Math.random() * 6)];
         console.log(RandomType);
         Shape.classList.add(RandomType);
 
@@ -59,11 +59,19 @@ export class AppGameComponent implements OnInit {
         }
 
 
-        else {
+        if (["triangle-up"].includes(RandomType)) {
             Shape.style.width = "0";
             Shape.style.height = "0";
             Shape.style.borderRight = "25px solid transparent";
             Shape.style.borderBottom = "50px solid #555";
+            Shape.style.borderLeft = "25px solid transparent";
+        }
+
+        if (["triangle-down"].includes(RandomType)) {
+            Shape.style.width = "0";
+            Shape.style.height = "0";
+            Shape.style.borderRight = "25px solid transparent";
+            Shape.style.borderTop = "50px solid #555";
             Shape.style.borderLeft = "25px solid transparent";
         }
         //console.log(x);
@@ -74,11 +82,17 @@ export class AppGameComponent implements OnInit {
             const b = Math.floor(Math.random() * 256);
             Shape.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
         }
-        else{
+        if (["triangle-up"].includes(RandomType)) {
             const r = Math.floor(Math.random() * 256);
             const g = Math.floor(Math.random() * 256);
             const b = Math.floor(Math.random() * 256);
-           Shape.style.borderBottomColor = `rgb(${r},${g},${b})` 
+            Shape.style.borderBottomColor = `rgb(${r},${g},${b})`
+        }
+        if (["triangle-down"].includes(RandomType)) {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            Shape.style.borderTopColor = `rgb(${r},${g},${b})`
         }
 
         Shape.onclick = () => {
