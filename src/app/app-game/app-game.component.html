@@ -1,21 +1,27 @@
 <div class="main">
+    <div class="pop-up" id="pop-up">
+        <h2>پایان بازی</h2>
+        <h2>رکورد:{{record}}</h2>
+        <h2>امتیاز:{{score}}</h2>
+        <button id="pop-upbtn" (click)="closepopup()">بستن</button>
+    </div>
     <div id="game-container">
 
     </div>
 
     <section class="info">
 
-        <div class="score-mis">
+        <div class="score-mis" id="score-mis">
             <h2>امتیاز</h2>
             <p>{{score}}</p>
-            <h2>فرصت برای خطا</h2>
+            <h2>فرصت باقی مانده</h2>
             <p>{{health}}</p>
             <h2>سرعت</h2>
-            <p>{{speed}}</p>
+            <p>{{speed.toFixed(0)}}</p>
         </div>
         <div class="buttons">
-            <button id="start-btn" (click)="StartGame()">شروع</button>
-            <button id="stop-btn" (click)="EndGame()">پایان</button>
+            <button class="stylebtn" id="start-btn" (click)="StartGame()">شروع</button>
+            <button class="stylebtn" id="stop-btn" (click)="EndGame()">پایان</button>
         </div>
     </section>
 </div>
