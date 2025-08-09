@@ -115,7 +115,6 @@ export class AppGameComponent implements OnInit {
             let shapeTop = parseFloat(shape.style.top || "0");
             shapeTop += this.speed * (deltaTime / 16.67);
             shape.style.top = `${shapeTop}px`;
-console.log(shapeTop)
             if (shapeTop > window.innerHeight) {
                 if (document.body.contains(shape)) {
                     this.health--;
@@ -152,7 +151,7 @@ console.log(shapeTop)
 
         if (div) {
             div.style.zIndex = "100";
-
+            div.style.display = "flex"
         }
     }
 
@@ -164,6 +163,7 @@ console.log(shapeTop)
 
         if (div) {
             div.style.zIndex = "0"
+            div.style.display = "none"
         }
 
 
